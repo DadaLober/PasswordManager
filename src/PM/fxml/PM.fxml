@@ -88,9 +88,9 @@
                         <Pane prefHeight="50.0" prefWidth="286.0">
                            <children>
                               <JFXTextField focusColor="#6f5cc2" layoutX="14.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" promptText="Search Vault" style="-fx-background-color: #404040; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #aeaeae;" unFocusColor="#aeaeae" />
-                              <JFXButton buttonType="RAISED" layoutX="245.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="30.0" text="  " textFill="WHITE">
+                              <JFXButton buttonType="RAISED" layoutX="244.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="33.0" text="  " textFill="WHITE">
                                  <graphic>
-                                    <FontIcon iconColor="WHITE" iconLiteral="fas-plus" iconSize="20" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="fas-plus" iconSize="20" layoutX="2.0" />
                                  </graphic>
                               </JFXButton>
                            </children>
@@ -160,8 +160,10 @@
                         <FontIcon iconColor="#aeaeae" iconLiteral="far-window-minimize" iconSize="20" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="168.0" layoutY="82.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="39.0" text="  " textFill="WHITE" />
-                  <FontIcon iconColor="WHITE" iconLiteral="far-edit" iconSize="25" layoutX="175.0" layoutY="105.0" />
+                  <JFXButton buttonType="RAISED" layoutX="305.0" layoutY="86.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="39.0" text="  " textFill="WHITE">
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="far-edit" iconSize="25" />
+                     </graphic></JFXButton>
                </children>
             </Pane>
          </right>
