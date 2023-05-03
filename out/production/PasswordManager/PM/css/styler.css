@@ -1,0 +1,34 @@
+.sidebarItem:hover{
+    -fx-background-color: #146886;
+    -fx-border-color: WHITE;
+    -fx-border-width: 0px 0px 0px 3px;
+
+}
+.textcolorwhite {
+-fx-text-fill: #eeeeee;
+-fx-prompt-text-fill: #b2b2b2;
+}
+.angleleft:hover{
+    -fx-background-color: #243447;
+    -fx-border-color: #243447;
+    -fx-border-width: 0px 0px 0px 5px;
+}
+.angleright:hover{
+    -fx-background-color: #243447;
+    -fx-border-color: #243447;
+    -fx-border-width: 0px 10px 0px 0px;
+}
+.chart{
+-fx-background-color: #243447;
+-fx-legend-visible: false;
+-fx-text-fill: white;
+}
+.jfx-combo-box {
+	-fx-background-color:   #243447;
+	-fx-prompt-text-fill: #b2b2b2;
+}
+
+.jfx-combo-box .list-cell {
+	-fx-background-color:  #243447;
+	-fx-text-fill: #eeeeee;
+}

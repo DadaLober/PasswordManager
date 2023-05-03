@@ -9,13 +9,11 @@
 
 .button:pressed {
     -fx-background-color: #165DDB;
-    -fx-background-radius: 1em;
 }
 
 .button:focused {
     -fx-background-color: #165DDB;
     -fx-border-color: #165DDB;
-    -fx-background-radius: 1em;
 }
 
 .button2 {
@@ -44,6 +42,7 @@
 .table-view {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
+    -fx-background-color: #1e1e1e;
 }
 
 .table-view :focus {
@@ -55,7 +54,8 @@
 .table-view .column-header,
 .table-view .column-header-background .filler {
     -fx-cell-size: 20;
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #1e1e1e;
 }
 
 .table-view .column-header .label {

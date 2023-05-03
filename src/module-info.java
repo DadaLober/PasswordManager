@@ -8,6 +8,8 @@ module PasswordManager {
     requires org.kordamp.ikonli.core;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.ikonli.coreui;
+    requires java.sql;
+    requires java.desktop;
 
     opens PM;
     exports PM;

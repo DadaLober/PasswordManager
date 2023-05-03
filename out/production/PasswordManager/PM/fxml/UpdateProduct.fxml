@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="520.0" style="-fx-background-color: #282828; -fx-border-color: #1a1a1a; -fx-border-insets: 1 0 0 0;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PM.UpdateProductController">
+    <center>
+        <AnchorPane>
+            <children>
+                <Label layoutX="28.0" layoutY="22.0" text="Updating Data..." textFill="#eeeeee">
+                    <font>
+                        <Font name="Tahoma" size="30.0" />
+                    </font>
+                </Label>
+                <Button layoutX="60.0" layoutY="440.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="400.0" style="-fx-background-color: #1e1e1e;" text="Update Product" textFill="WHITE">
+                    <font>
+                        <Font name="Verdana" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                        <FontIcon iconColor="#eeeeee" iconLiteral="cil-plus" iconSize="20" />
+                    </graphic>
+                </Button>
+                <JFXTextField fx:id="newusernameTextField" focusColor="#c51f5d" layoutX="60.0" layoutY="240.0" prefHeight="26.0" prefWidth="400.0" promptText="Email" styleClass="textcolorwhite" stylesheets="@../css/styler.css" unFocusColor="#eeeeee">
+                    <font>
+                        <Font name="Verdana" size="13.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="newlinkTextField" focusColor="#c51f5d" layoutX="60.0" layoutY="120.0" prefHeight="26.0" prefWidth="400.0" promptText="www.google.com" styleClass="textcolorwhite" stylesheets="@../css/styler.css" unFocusColor="#eeeeee">
+                    <font>
+                        <Font name="Verdana" size="13.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="newwebsiteTextField" focusColor="#c51f5d" layoutX="60.0" layoutY="180.0" prefHeight="26.0" prefWidth="400.0" promptText="Website Name" styleClass="textcolorwhite" stylesheets="@../css/styler.css" unFocusColor="#eeeeee">
+                    <font>
+                        <Font name="Verdana" size="13.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="newnotesPasswordField" focusColor="#c51f5d" layoutX="60.0" layoutY="360.0" prefHeight="26.0" prefWidth="400.0" promptText=" Notes" styleClass="textcolorwhite" stylesheets="@../css/styler.css" unFocusColor="#eeeeee">
+                    <font>
+                        <Font name="Verdana" size="13.0" />
+                    </font>
+                </JFXTextField>
+                <JFXPasswordField fx:id="newpasswordPasswordField" focusColor="#c51f5d" layoutX="60.0" layoutY="300.0" prefHeight="26.0" prefWidth="400.0" promptText="Password" styleClass="textcolorwhite" stylesheets="@../css/styler.css" unFocusColor="#eeeeee">
+                    <font>
+                        <Font name="Verdana" size="13.0" />
+                    </font>
+                </JFXPasswordField>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <HBox alignment="CENTER_RIGHT" prefHeight="28.0" prefWidth="520.0" style="-fx-background-color: #1e1e1e;">
+            <children>
+                <Button fx:id="addCancelButton" mnemonicParsing="false" onAction="#closeButtonOnAction" style="-fx-background-color: #1e1e1e;">
+                    <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <FontIcon iconColor="#eeeeee" iconLiteral="far-window-close" iconSize="20" />
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </HBox>
+    </top>
+</BorderPane>
