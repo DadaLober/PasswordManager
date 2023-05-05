@@ -4,33 +4,60 @@ import javafx.beans.property. SimpleStringProperty;
 
 public class PasswordModel {
 
-    private SimpleStringProperty appName;
-    private SimpleStringProperty appMail;
-    private SimpleStringProperty appIcon;
-    private SimpleStringProperty website;
-    private SimpleStringProperty notes;
+    private int id;
+    private String webname;
+    private String appMail;
+    private String appPass;
+    private String website;
+    private String notes;
+    private SimpleStringProperty iconpath;
 
-    public PasswordModel(String appName, String appMail, String appIcon, String website, String notes){
-        this.appName = new SimpleStringProperty(appName);
-        this.appMail = new SimpleStringProperty(appMail);
-        this.appIcon = new SimpleStringProperty(appIcon);
-        this.website = new SimpleStringProperty(website);
-        this.notes = new SimpleStringProperty(notes);
+    public PasswordModel(int id, String webname, String appMail, String appPass, String notes, String website, String iconpath){
+        this.id = id;
+        this.webname = webname;
+        this.appMail = appMail;
+        this.appPass = appPass;
+        this.notes = notes;
+        this.website = website;
+        this.iconpath = new SimpleStringProperty(iconpath);
     }
-
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getAppName() {
-        return appName.get();
+        return webname;
+    }
+    public void setAppName(String name) {
+        this.webname = name;
     }
     public String getAppEmail() {
-        return appMail.get();
+        return appMail;
     }
-    public String getAppIcon() {
-        return appIcon.get();
+    public void setAppMail(String mail) {
+        this.appMail = mail;
+    }
+    public String getPass() {
+        return appPass;
+    }
+    public void setAppPass(String pass) {
+        this.appPass = pass;
     }
     public String getWebsite() {
-        return website.get();
+        return website;
+    }
+    public void setWebsite(String website) {
+        this.website = website;
     }
     public String getNotes() {
-        return notes.get();
+        return notes;
+    }
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+    public String getAppIcon() {
+        return iconpath.get();
     }
 }

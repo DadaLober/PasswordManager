@@ -21,7 +21,7 @@
                         <Font name="Tahoma" size="30.0" />
                     </font>
                 </Label>
-                <Button layoutX="60.0" layoutY="440.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="400.0" style="-fx-background-color: #1e1e1e;" text="Update Product" textFill="WHITE">
+                <Button fx:id="UpdateButton" layoutX="60.0" layoutY="440.0" mnemonicParsing="false" onAction="#UpdateButtonOnAction" prefHeight="35.0" prefWidth="400.0" style="-fx-background-color: #1e1e1e;" text="Update Product" textFill="WHITE">
                     <font>
                         <Font name="Verdana" size="16.0" />
                     </font>

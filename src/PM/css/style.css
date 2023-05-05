@@ -44,6 +44,11 @@
     -fx-faint-focus-color: transparent;
     -fx-background-color: #1e1e1e;
 }
+.list-view {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: #1e1e1e;
+}
 
 .table-view :focus {
     -fx-focus-color: transparent;

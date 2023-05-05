@@ -19,13 +19,28 @@ public class itemsController implements Initializable {
     @FXML
     private ImageView ivicon;
 
+    private PasswordModel passwordModel;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-    public void setItemInfo (String appName, String appMail, String appIconUrl){
+
+    public PasswordModel getPasswordModel() {
+        return passwordModel;
+    }
+
+    public void setPasswordModel(PasswordModel passwordModel) {
+        this.passwordModel = passwordModel;
+    }
+
+    public void setItemInfo (String appName, String appMail,String appIconUrl){
+
             appNamelabel.setText(appName);
             appMaillabel.setText(appMail);
-            ivicon.setImage(new Image(String.valueOf(Main.class.getResource(appIconUrl))));
+            if(!appIconUrl.equalsIgnoreCase("DEFAULT")) {
+                ivicon.setImage(new Image(String.valueOf(Main.class.getResource(appIconUrl))));
+            }
     }
+
 }
