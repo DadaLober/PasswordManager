@@ -5,14 +5,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PM.QRScannerController">
+<BorderPane prefHeight="478.0" prefWidth="570.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PM.QRScannerController">
    <center>
-      <ImageView fx:id="webcamView" fitHeight="500.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fx:id="webcamView" fitHeight="541.0" fitWidth="478.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/icons8-adobe-64.png" />
-         </image></ImageView>
+         </image>
+      </ImageView>
    </center>
    <bottom>
-      <Label fx:id="testResult" prefHeight="18.0" prefWidth="346.0" text="nbkjhblh" textFill="#f7f7f7" BorderPane.alignment="CENTER" />
+      <Label fx:id="testResult" prefHeight="18.0" prefWidth="435.0" textFill="WHITE" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

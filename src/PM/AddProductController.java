@@ -84,19 +84,24 @@ public class AddProductController implements Initializable {
         Connection conn = connectNow.connectDB();
 
         String website, webname, email, password, notes;
-        website = linkTextField.getText();
         webname = websiteTextField.getText();
         email = usernameTextField.getText();
         password = passwordPasswordField.getText();
         notes = notesTextField.getText();
+        website = linkTextField.getText();
 
         new Alert(Alert.AlertType.CONFIRMATION, "Do you want to add this data?").showAndWait().ifPresent(new Consumer < ButtonType > () {
             @Override
             public void accept(ButtonType response) {
                 if (response == ButtonType.OK) {
                     try {
-                        String sql = "INSERT INTO `password_db`(`webname`,`email`,`password`,`notes`,`website`) VALUES ('" + webname + "','" + email + "','" + password + "','" + notes + "','" + website + "')";
+                        String sql = "INSERT INTO `password_db`(`webname`,`email`,`password`,`notes`,`website`) VALUES (?,?,?,?,?)";
                         statement = conn.prepareStatement(sql);
+                        statement.setString(1,webname);
+                        statement.setString(2,email);
+                        statement.setString(3,password);
+                        statement.setString(4,notes);
+                        statement.setString(5,website);
                         statement.executeUpdate();
                         new Alert(Alert.AlertType.INFORMATION, "Successfully added!").show();
                         clear();

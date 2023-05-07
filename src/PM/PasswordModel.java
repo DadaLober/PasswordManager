@@ -11,8 +11,9 @@ public class PasswordModel {
     private String notes;
     private String iconpath;
     private int favorites;
+    private int trashitem;
 
-    public PasswordModel(int id, String webname, String appMail, String appPass, String notes, String website, String iconpath, int favorites) {
+    public PasswordModel(int id, String webname, String appMail, String appPass, String notes, String website, String iconpath, int favorites, int trashitem) {
         this.id = id;
         this.webname = webname;
         this.appMail = appMail;
@@ -21,14 +22,15 @@ public class PasswordModel {
         this.website = website;
         this.iconpath = iconpath;
         this.favorites = favorites;
+        this.trashitem = trashitem;
     }
 
-    public PasswordModel(String webname, String appMail, String appPass, String website, String notes) {
+    public PasswordModel(String webname, String appMail, String appPass, String notes, String website) {
         this.webname = webname;
         this.appMail = appMail;
         this.appPass = appPass;
-        this.website = website;
         this.notes = notes;
+        this.website = website;
     }
 
     public int getId() {
@@ -76,8 +78,14 @@ public class PasswordModel {
     public int getFavorites() {
         return favorites;
     }
-    public void setFavorites(int favorites) {
-        this.favorites = favorites;
+    public void setFavorites(int trashitem) {
+        this.trashitem = trashitem;
+    }
+    public int getTrashitem() {
+        return trashitem;
+    }
+    public void setTrashitem(int trashitem) {
+        this.trashitem = trashitem;
     }
 
 }

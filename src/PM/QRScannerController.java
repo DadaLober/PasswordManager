@@ -103,11 +103,11 @@ public class QRScannerController implements Initializable {
 
                                    String sql = "INSERT INTO `password_db`(`webname`, `email`, `password`, `notes`, `website`) VALUES (?,?,?,?,?)";
                                    statement = conn.prepareStatement(sql);
-                                   statement.setString(1,insert.getWebsite());
+                                   statement.setString(1,insert.getAppName());
                                    statement.setString(2,insert.getAppEmail());
                                    statement.setString(3,insert.getPass());
                                    statement.setString(4,insert.getNotes());
-                                   statement.setString(5,insert.getAppName());
+                                   statement.setString(5,insert.getWebsite());
                                    statement.execute();
 
 
