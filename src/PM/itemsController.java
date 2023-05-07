@@ -42,5 +42,4 @@ public class itemsController implements Initializable {
             ivicon.setImage(new Image(String.valueOf(Main.class.getResource(appIconUrl))));
         }
     }
-
 }

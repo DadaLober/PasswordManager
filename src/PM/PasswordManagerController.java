@@ -1,5 +1,6 @@
 package PM;
 
+import com.google.zxing.WriterException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -11,19 +12,31 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.AccessibleAction;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.sql.Connection;
 import java.util.Arrays;
@@ -342,8 +355,11 @@ public class PasswordManagerController implements Initializable {
                     filter.setPredicate(passwordModel -> passwordModel.getFavorites() == 1);
                     vItems.getChildren().clear();
                     reset(filter);
+                    cleartext();
+                    disablebuttons();
                     addFavorite.setVisible(false);
                     removeFavorite.setVisible(true);
+
 
                 });
                 addFavorite.setOnMousePressed(event -> {
@@ -402,15 +418,38 @@ public class PasswordManagerController implements Initializable {
         removeFavorite.setVisible(false);
     }
 
-    //public void addFavoriteOnAction (ActionEvent e) throws SQLException {
+    public void generateQR(ActionEvent e){
+        PasswordModel pm = SelectedProd.getINSTANCE().getSelectedProd();
 
+        String mgToSend = pm.getAppEmail() + ":::" +pm.getPass();
 
+        try {
+            BufferedImage bi = QRGen.generateQR(Encryptor.encrypt(mgToSend,"millerweak"),500);
+            QRStore.getINSTANCE().setBuffredImage(bi);
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/QRView.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(((Node) e.getSource()).getScene().getWindow());
+            stage.showAndWait();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
-        //PM.Connection connectNow = new PM.Connection();
-        //Connection conn = connectNow.connectDB();
-        //statement = conn.prepareStatement("UPDATE `password_db` SET `webname`=?,`email`=?,`password`=?,`notes`=?,`website`=? WHERE `pid`=?");
-        //statement.setInt(6, selectedProd.getId());
-        //statement.executeUpdate();
-       // apps.clear();
-    //}
+    public void importWithQR (ActionEvent e) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/QRScanner.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(((Node) e.getSource()).getScene().getWindow());
+            stage.showAndWait();
+            ((Stage) ((Button) e.getSource()).getScene().getWindow()).close();
+        } catch (IOException ex) {
+            new Alert(Alert.AlertType.ERROR, ex.getMessage(), ButtonType.OK).show();new Alert(Alert.AlertType.ERROR, ex.getMessage(), ButtonType.OK).show();
+        }
+    }
 }
