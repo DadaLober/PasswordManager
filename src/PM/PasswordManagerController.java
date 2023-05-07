@@ -26,7 +26,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
@@ -421,7 +420,7 @@ public class PasswordManagerController implements Initializable {
     public void generateQR(ActionEvent e){
         PasswordModel pm = SelectedProd.getINSTANCE().getSelectedProd();
 
-        String mgToSend = pm.getAppEmail() + ":::" +pm.getPass();
+        String mgToSend = pm.getWebsite() + ":::" +pm.getAppEmail()+ ":::" +pm.getPass()+ ":::" +pm.getNotes()+ ":::" +pm.getAppEmail();
 
         try {
             BufferedImage bi = QRGen.generateQR(Encryptor.encrypt(mgToSend,"millerweak"),500);
@@ -447,8 +446,11 @@ public class PasswordManagerController implements Initializable {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initOwner(((Node) e.getSource()).getScene().getWindow());
             stage.showAndWait();
-            ((Stage) ((Button) e.getSource()).getScene().getWindow()).close();
-        } catch (IOException ex) {
+            RefreshProdList();
+            selectedProd = null;
+            vItems.getChildren().clear();
+            reset(filter);
+        } catch (IOException | SQLException ex) {
             new Alert(Alert.AlertType.ERROR, ex.getMessage(), ButtonType.OK).show();new Alert(Alert.AlertType.ERROR, ex.getMessage(), ButtonType.OK).show();
         }
     }

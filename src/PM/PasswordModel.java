@@ -22,6 +22,15 @@ public class PasswordModel {
         this.iconpath = iconpath;
         this.favorites = favorites;
     }
+
+    public PasswordModel(String webname, String appMail, String appPass, String website, String notes) {
+        this.webname = webname;
+        this.appMail = appMail;
+        this.appPass = appPass;
+        this.website = website;
+        this.notes = notes;
+    }
+
     public int getId() {
         return id;
     }

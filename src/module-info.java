@@ -10,10 +10,8 @@ module PasswordManager {
     requires org.kordamp.ikonli.coreui;
     requires java.sql;
     requires java.desktop;
-    requires com.google.zxing;
-    requires com.google.zxing.javase;
-    requires webcam.capture;
     requires javafx.swing;
+    requires Webcam;
 
     opens PM;
     exports PM to javafx.fxml;

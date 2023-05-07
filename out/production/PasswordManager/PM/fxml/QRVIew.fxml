@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="PM.QRVIewController">
+   <children>
+      <ImageView fx:id="imgQR" fitHeight="500.0" fitWidth="500.0" layoutX="50.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
