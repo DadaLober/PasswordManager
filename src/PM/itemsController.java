@@ -34,13 +34,13 @@ public class itemsController implements Initializable {
         this.passwordModel = passwordModel;
     }
 
-    public void setItemInfo (String appName, String appMail,String appIconUrl){
+    public void setItemInfo(String appName, String appMail, String appIconUrl) {
 
-            appNamelabel.setText(appName);
-            appMaillabel.setText(appMail);
-            if(!appIconUrl.equalsIgnoreCase("DEFAULT")) {
-                ivicon.setImage(new Image(String.valueOf(Main.class.getResource(appIconUrl))));
-            }
+        appNamelabel.setText(appName);
+        appMaillabel.setText(appMail);
+        if (!appIconUrl.equalsIgnoreCase("DEFAULT")) {
+            ivicon.setImage(new Image(String.valueOf(Main.class.getResource(appIconUrl))));
+        }
     }
 
 }

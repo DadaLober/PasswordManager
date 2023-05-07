@@ -1,7 +1,5 @@
 package PM;
 
-import javafx.beans.property. SimpleStringProperty;
-
 public class PasswordModel {
 
     private int id;
@@ -10,16 +8,18 @@ public class PasswordModel {
     private String appPass;
     private String website;
     private String notes;
-    private SimpleStringProperty iconpath;
+    private String iconpath;
+    private int favorites;
 
-    public PasswordModel(int id, String webname, String appMail, String appPass, String notes, String website, String iconpath){
+    public PasswordModel(int id, String webname, String appMail, String appPass, String notes, String website, String iconpath, int favorites) {
         this.id = id;
         this.webname = webname;
         this.appMail = appMail;
         this.appPass = appPass;
         this.notes = notes;
         this.website = website;
-        this.iconpath = new SimpleStringProperty(iconpath);
+        this.iconpath = iconpath;
+        this.favorites = favorites;
     }
     public int getId() {
         return id;
@@ -58,6 +58,16 @@ public class PasswordModel {
         this.notes = notes;
     }
     public String getAppIcon() {
-        return iconpath.get();
+        return iconpath;
     }
+    public void setAppIcon(String iconpath) {
+        this.iconpath = iconpath;
+    }
+    public int getFavorites() {
+        return favorites;
+    }
+    public void setFavorites(int favorites) {
+        this.favorites = favorites;
+    }
+
 }

@@ -8,10 +8,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Main extends Application {
-    double x,y = 0;
+    double x, y = 0;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/PasswordManager.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -21,13 +21,12 @@ public class Main extends Application {
             y = event.getSceneY();
         });
         root.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX()- x);
-            primaryStage.setY(event.getScreenY()- y);
+            primaryStage.setX(event.getScreenX() - x);
+            primaryStage.setY(event.getScreenY() - y);
         });
 
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

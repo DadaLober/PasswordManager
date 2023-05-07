@@ -10,7 +10,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -44,7 +43,6 @@ public class UpdateProductController implements Initializable {
 
     private PreparedStatement statement;
 
-
     public void closeButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) addCancelButton.getScene().getWindow();
         stage.close();
@@ -52,13 +50,16 @@ public class UpdateProductController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        selectedProd = SelectedProd.getINSTANCE().getSelectedProd();
-        newlinkTextField.setText(selectedProd.getWebsite());
-        newnotesPasswordField.setText(String.valueOf(selectedProd.getNotes()));
-        newpasswordPasswordField.setText(String.valueOf(selectedProd.getPass()));
-        newusernameTextField.setText(selectedProd.getAppEmail());
-        newwebsiteTextField.setText(selectedProd.getAppName());
+        try {
+            selectedProd = SelectedProd.getINSTANCE().getSelectedProd();
+            newlinkTextField.setText(selectedProd.getWebsite());
+            newnotesPasswordField.setText(String.valueOf(selectedProd.getNotes()));
+            newpasswordPasswordField.setText(String.valueOf(selectedProd.getPass()));
+            newusernameTextField.setText(selectedProd.getAppEmail());
+            newwebsiteTextField.setText(selectedProd.getAppName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void UpdateButtonOnAction(ActionEvent event) {
@@ -98,14 +99,14 @@ public class UpdateProductController implements Initializable {
         PM.Connection connectNow = new PM.Connection();
         java.sql.Connection conn = connectNow.connectDB();
 
-        String website, webname, email,password,notes;
+        String website, webname, email, password, notes;
         website = newlinkTextField.getText();
         webname = newwebsiteTextField.getText();
         email = newusernameTextField.getText();
         password = newpasswordPasswordField.getText();
         notes = newnotesPasswordField.getText();
 
-        new Alert(Alert.AlertType.CONFIRMATION, "Do you want to update this product?").showAndWait().ifPresent(new Consumer<ButtonType>() {
+        new Alert(Alert.AlertType.CONFIRMATION, "Do you want to update this product?").showAndWait().ifPresent(new Consumer < ButtonType > () {
             @Override
             public void accept(ButtonType response) {
                 if (response == ButtonType.OK) {
@@ -128,6 +129,6 @@ public class UpdateProductController implements Initializable {
                 }
             }
         });
-        ((Node)event.getSource()).getScene().getWindow().hide();
+        ((Node) event.getSource()).getScene().getWindow().hide();
     }
 }

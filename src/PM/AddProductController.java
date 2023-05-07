@@ -38,7 +38,7 @@ public class AddProductController implements Initializable {
 
     private PreparedStatement statement;
 
-    public void closeButtonOnAction (ActionEvent e) {
+    public void closeButtonOnAction(ActionEvent e) {
 
         Stage stage = (Stage) addCancelButton.getScene().getWindow();
         stage.close();
@@ -59,7 +59,8 @@ public class AddProductController implements Initializable {
             invalidInp = true;
             alert.setTitle(INVALID_INPUT);
             alert.setContentText(alert.getContentText() + "Missing Website Name\n");
-        }if (usernameTextField.getText().isBlank()) {
+        }
+        if (usernameTextField.getText().isBlank()) {
             invalidInp = true;
             alert.setTitle(INVALID_INPUT);
             alert.setContentText(alert.getContentText() + "Missing Email\n");
@@ -79,18 +80,17 @@ public class AddProductController implements Initializable {
             return;
         }
 
-
         PM.Connection connectNow = new PM.Connection();
         Connection conn = connectNow.connectDB();
 
-        String website, webname, email,password,notes;
+        String website, webname, email, password, notes;
         website = linkTextField.getText();
         webname = websiteTextField.getText();
         email = usernameTextField.getText();
         password = passwordPasswordField.getText();
         notes = notesTextField.getText();
 
-        new Alert(Alert.AlertType.CONFIRMATION, "Do you want to add this data?").showAndWait().ifPresent(new Consumer<ButtonType>() {
+        new Alert(Alert.AlertType.CONFIRMATION, "Do you want to add this data?").showAndWait().ifPresent(new Consumer < ButtonType > () {
             @Override
             public void accept(ButtonType response) {
                 if (response == ButtonType.OK) {
@@ -109,8 +109,7 @@ public class AddProductController implements Initializable {
             }
         });
     }
-    public void clear()
-    {
+    public void clear() {
         websiteTextField.setText("");
         linkTextField.setText("");
         usernameTextField.setText("");

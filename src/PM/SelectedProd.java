@@ -6,12 +6,11 @@ public class SelectedProd {
 
     private static final SelectedProd INSTANCE = new SelectedProd();
 
-    private SelectedProd(){}
+    private SelectedProd() {}
 
     public static SelectedProd getINSTANCE() {
         return INSTANCE;
     }
-
 
     public PasswordModel getSelectedProd() {
         return selectedProd;
@@ -20,6 +19,4 @@ public class SelectedProd {
     public void setSelectedProd(PasswordModel selectedProd) {
         this.selectedProd = selectedProd;
     }
-
 }
-
