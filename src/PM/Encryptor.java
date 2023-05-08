@@ -44,4 +44,8 @@ public class Encryptor {
         cipher.init(Cipher.DECRYPT_MODE, secretKey);
         return new String(cipher.doFinal(Base64.getDecoder().decode(msg)));
     }
+
+    public static void encrypt(String passtosend) {
+
+    }
 }

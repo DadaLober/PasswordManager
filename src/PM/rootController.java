@@ -64,6 +64,8 @@ public class rootController {
                         });
 
                         newWindow.show();
+                        Stage stage = (Stage) ((Node) evt.getSource()).getScene().getWindow();
+                        stage.close();
                     } else {
                     Stage stage = (Stage) ((Node) evt.getSource()).getScene().getWindow();
                     stage.close();
