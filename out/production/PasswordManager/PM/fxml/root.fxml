@@ -25,7 +25,7 @@
                </cursor>
             </Button>
             <FontIcon iconColor="#eeeeee" iconLiteral="fas-unlock" iconSize="30" layoutX="13.0" layoutY="96.0" text="" />
-            <JFXPasswordField fx:id="lbl_password" focusColor="#c51f5d" layoutX="68.0" layoutY="69.0" prefHeight="30.0" prefWidth="400.0" promptText="Password" unFocusColor="#eeeeee">
+            <JFXPasswordField fx:id="lbl_password" focusColor="#c51f5d" layoutX="68.0" layoutY="69.0" prefHeight="30.0" prefWidth="400.0" promptText="Password" styleClass="textcolorwhite" stylesheets="@../css/styler.css" unFocusColor="#eeeeee">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font>
