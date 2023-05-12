@@ -22,7 +22,7 @@ import java.sql.SQLException;
 public class rootController {
 
     @FXML
-    private Button btnLogn;
+    private Button closeButton;
 
     @FXML
     private JFXPasswordField lbl_password;
@@ -37,6 +37,12 @@ public class rootController {
 
 
     }
+    public void closeButtonOnAction() {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+
+    }
+
     public void btn_login(ActionEvent evt) throws SQLException, IOException {
         PM.Connection connectNow = new PM.Connection();
         java.sql.Connection conn = connectNow.connectDB();

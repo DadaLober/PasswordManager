@@ -11,30 +11,33 @@
 
 <BorderPane style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PM.rootController">
    <center>
-      <Pane prefHeight="200.0" prefWidth="500.0">
+      <Pane prefHeight="150.0" prefWidth="400.0">
          <children>
-            <Button fx:id="btnLogn" layoutX="206.0" layoutY="112.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btn_login" prefHeight="74.0" prefWidth="65.0" style="-fx-background-color: #282828;" styleClass="angleleft">
+            <Button fx:id="btnLogn" layoutX="180.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#btn_login" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #282828;" styleClass="angleleft">
                <font>
                   <Font name="Arial Bold" size="37.0" />
                </font>
                <graphic>
-                  <FontIcon iconColor="#eeeeee" iconLiteral="fas-angle-right" iconSize="40" />
+                  <FontIcon iconColor="#eeeeee" iconLiteral="fas-angle-right" iconSize="25" />
                </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <FontIcon iconColor="#eeeeee" iconLiteral="fas-unlock" iconSize="30" layoutX="13.0" layoutY="96.0" text="" />
-            <JFXPasswordField fx:id="lbl_password" focusColor="#c51f5d" layoutX="68.0" layoutY="69.0" prefHeight="30.0" prefWidth="400.0" promptText="Password" styleClass="textcolorwhite" stylesheets="@../css/styler.css" unFocusColor="#eeeeee">
+            <JFXPasswordField fx:id="lbl_password" focusColor="#c51f5d" layoutX="45.0" layoutY="60.0" prefHeight="30.0" prefWidth="310.0" promptText="Password" styleClass="textcolorwhite" stylesheets="@../css/styler.css" unFocusColor="#eeeeee">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font>
             </JFXPasswordField>
-            <Label fx:id="loginCheckLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="14.0" prefHeight="25.0" prefWidth="478.0" text="Enter Root Password:" textFill="#eeeeee">
+            <Label fx:id="loginCheckLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="14.0" prefHeight="25.0" prefWidth="344.0" text="Enter Password:" textFill="#eeeeee">
                <font>
                   <Font name="Verdana" size="20.0" />
                </font>
             </Label>
+            <Button fx:id="closeButton" layoutX="366.0" layoutY="-2.0" mnemonicParsing="false" onAction="#closeButtonOnAction" style="-fx-background-color: #282828;">
+               <graphic>
+                  <FontIcon iconColor="#eeeeee" iconLiteral="far-window-close" iconSize="25" />
+               </graphic></Button>
          </children>
       </Pane>
    </center>
